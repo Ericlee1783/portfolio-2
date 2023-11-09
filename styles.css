@@ -20,17 +20,17 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: #333;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 4;
 }
 
 li {
   float: left;
 }
-
+/*nav bar styling*/
 li a {
   display: block;
   color: white;
@@ -40,10 +40,26 @@ li a {
   transition: background-color 0.3s ease;
 }
 
+/*navbar hovering color effect*/
 li a:hover {
-  background-color: #e30b0b94;
+  background-color: #e30b0b;
+  transition: background-color 0.3s ease-out;
+  border-radius: 30px;
+  animation: bounce 0.6s ease infinite; /* Subtle bounce effect on hover */
 }
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Bounce effect */
+  }
+  60% {
+    transform: translateY(-5px); /* Bounce effect */
+  }
+}
+/* hidden when user is not on this section of the page*/
 .hidden {
   opacity: 0;
   filter: blur(75px);
@@ -51,10 +67,21 @@ li a:hover {
   transition: all 2.5s;
 }
 
+/*shows when user intersects that portion of page*/
 .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
+  /* animation: fadeIn 1s ease; Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*typing animation*/
@@ -82,7 +109,6 @@ li a:hover {
   letter-spacing: 0.15em;
   animation: typing 7s steps(40, end), blink-caret 0.75s step-end infinite;
 }
-
 /* The typing effect */
 @keyframes typing {
   from {
@@ -104,13 +130,16 @@ li a:hover {
   }
 }
 
-.project {
-  margin: 10px;
-  display: flex;
+
+.projects a {
+  margin-right: 30px;
+  transition: box-shadow 0.3s ease;
+
+  box-shadow: 0px 0px 15px 0px #fff; /* White box shadow */
 }
 
 #hometown {
-  transition: 4s;
+  transition: all 4s;
   animation: reverse;
 }
 #graduated {
@@ -118,7 +147,7 @@ li a:hover {
   animation: alternate;
 }
 #future {
-  transition: 6s;
+  transition: all 6s;
   animation: alternate;
 }
 
@@ -129,3 +158,15 @@ footer {
   padding: 20px 0;
 }
 
+
+
+#project-1:hover {
+  box-shadow: 0px 40px 25px -4px white;
+  transition: 1.2s;
+
+}
+#project-2:hover {
+  box-shadow: 0px 40px 25px -4px white;
+  transition: 1.2s;
+
+}

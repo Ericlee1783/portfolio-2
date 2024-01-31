@@ -170,3 +170,8 @@ footer {
   transition: 1.2s;
 
 }
+#project-3:hover {
+  box-shadow: 0px 40px 25px -4px white;
+  transition: 1.2s;
+
+}
